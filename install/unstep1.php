@@ -1,5 +1,10 @@
 <?if(!check_bitrix_sessid()) return;?>
 <?
+
+/**
+ * Copyright (c) 6/3/2020 Created By/Edited By ASDAFF asdaff.asad@yandex.ru
+ */
+
 if (!check_bitrix_sessid())
 	return;
 

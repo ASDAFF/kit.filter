@@ -1,0 +1,483 @@
+/*
+ * Copyright (c) 6/3/2020 Created By/Edited By ASDAFF asdaff.asad@yandex.ru
+ */
+
+#collected-filter{
+	border: 2px solid #ffea94;
+	margin-top: 1em;
+	margin-bottom: 2em;
+	max-width:290px;
+	padding: 10px 10px 20px 10px;
+	position: relative;
+	background: white;
+}
+
+#collected-filter ul{
+	list-style: none !important;
+	margin:0;
+	padding:0 0 20px 0;
+}
+
+#collected-filter .lvl1 {
+	position: relative;
+	list-style: none !important;
+	margin:0;
+	padding:0;
+	margin-top: 1em;
+}
+
+#collected-filter .lvl1:before, #collected-filter li:before {
+	content: none !important;
+}
+
+#collected-filter .collected-filter-property-body{
+	padding: 10px 0 0 15px;
+}
+
+#collected-filter .lvl2{
+	margin:0;
+	padding: 2px 0 0 0;
+}
+
+#collected-filter .collected-filter-property-head {
+	zoom: 1;
+	padding-left: 19px;
+	margin-bottom:5px;
+	position: relative;
+}
+
+#collected-filter .collected-filter-property-i {
+	background: url("images/list.gif") no-repeat scroll center -9px rgba(0, 0, 0, 0);
+	display: block;
+	position: absolute;
+	font-size: 1px;
+	height: 9px;
+	left: 1px;
+	cursor: pointer;
+	top: 5px;
+	width: 9px;
+	zoom: 1;
+}
+
+#collected-filter .collected-closed .collected-filter-property-i {
+	background: url("images/list.gif") no-repeat scroll center top rgba(0, 0, 0, 0);
+}
+
+#collected-filter .collected-filter-property-name {
+	border-bottom: 1px dotted #000;
+	cursor: pointer;
+	position: relative;
+	font-weight:bold;
+}
+
+#collected-filter .collected-num .collected-input{
+	width: 4em;
+	margin:0;
+}
+
+#collected-filter .collected-num .collected-range{
+	padding:10px 10px 10px 0;
+}
+
+#collected-filter .collected-num .collected-range input{
+	display:none;
+}
+
+#collected-filter div.collected-combo,
+#collected-filter div.collected-radio
+{
+	padding: 5px 0 0 15px;
+	margin: 0;
+}
+
+#collected-filter div.collected-link
+{
+	padding: 0 0 0 15px;
+	margin: 0;
+}
+
+#collected-filter div.collected-select,
+#collected-filter div.collected-list
+{
+	padding: 0;
+	margin: 0;
+}
+
+#collected-filter .collected-select select,
+#collected-filter .collected-list select
+{
+	padding: 5px;
+	width:100%;
+}
+
+#collected-filter .collected-combo .lvl2 input,
+#collected-filter .collected-radio .lvl2 input{
+	margin:0;
+}
+
+#collected-filter .collected-combo .lvl2 label,
+#collected-filter .collected-radio .lvl2 label{
+	padding-left: 7px;
+}
+
+#collected-filter .collected-disabled label,
+#collected-filter .collected-disabled a,
+#collected-filter option.collected-disabled{
+	color: #6f7980;
+}
+
+#collected-filter .collected-link  .lvl2{
+	padding-left: 8px;
+	position: relative;
+	left: -8px;
+}
+
+#collected-filter .collected-link .collected-checked{
+	padding-left: 0;
+}
+
+#collected-filter .collected-link  .lvl2 a{
+	padding: 2px 0 1px 0;
+	display: inline-block;
+}
+
+#collected-filter .collected-link .collected-checked a{
+	border: 1px solid #e7e7e7;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	color: #3f454b;
+	padding: 1px 22px 1px 8px;
+	position: relative;
+	text-decoration:none;
+}
+
+#collected-filter .collected-link .collected-checked a:hover{
+	border-color: #fbdada;
+	text-decoration:none;
+}
+
+#collected-filter .collected-link  .lvl2 a span.collected-remove-link{
+	background: #ffffff url("images/remove_link.png") no-repeat 0 0;
+	display: none;
+	height: 8px;
+	margin-left: 8px;
+	position: absolute;
+	right: 8px;
+	top: 6px;
+	width: 8px;
+}
+
+#collected-filter .collected-link .collected-checked a span.collected-remove-link{
+	display: inline-block;
+}
+
+#collected-filter .collected-link .collected-checked a:hover span.collected-remove-link{
+	background-position: 0 100%;
+}
+
+#collected-filter .collected-link .collected-disabled a{
+	color: #6f7980 !important;
+	border:none;
+	text-decoration:line-through;
+}
+
+#collected-filter .collected-disabled a{
+	border:none;
+	text-decoration:line-through;
+}
+
+#collected-filter .lvl2 .collected-cnt{
+	color: #6f7980;
+	font-size: .85em;
+}
+
+#collected-filter .collected-disabled .collected-cnt, .collected-filter .collected-checked .collected-cnt{
+	display:none;
+}
+
+#collected-filter .collected-checked a{
+	border:none;
+	color:#000;
+}
+
+#collected-filter .collected-filter-property-body a.collected-values-other-show,
+#collected-filter .collected-filter-property-body a.collected-values-other-hide{
+	font-size: .85em;
+	display:inline-block;
+	margin-top:5px;
+	border:0;
+}
+
+#collected-filter .collected-filter-property-hint{
+	cursor: pointer;
+	position: relative;
+	top: 2px;
+	width: 12px;
+	height: 12px;
+	margin-left:5px;
+	display: inline-block;
+	background: rgba(0, 0, 0, 0) url(images/hint.gif) no-repeat right center;
+}
+
+#collected-filter .collected-filter-property-hint-text{
+	display:none;
+}
+
+.collected-filter-hint{
+	padding:5px 10px 5px 5px;
+	max-width: 500px;
+}
+
+#collected-filter .modef {
+	background: transparent url('images/modef.gif') no-repeat right center;
+	top: -4px;
+	position: absolute;
+	padding-right:5px;
+	z-index:1000;
+}
+
+#collected-filter .modef-right {
+	background: transparent url('images/modef-right.gif') no-repeat left center;
+	padding-left:5px;
+}
+
+#collected-filter .modef .modef-wrap {
+	background-color:#fff;
+	border: 1px solid #ffea94;
+	border-right:none;
+	color: #3F3F3F;
+	padding: 5px 25px 5px 10px;
+	white-space: nowrap;
+}
+
+#collected-filter .modef-right .modef-wrap {
+	border: 1px solid #ffea94;
+	border-left:none;
+}
+
+#collected-filter .collected-loading {
+	position:absolute;
+	z-index:100;
+	left:0;
+	top:0;
+	background:transparent url(images/loading.png) repeat center;
+	display:none;
+}
+
+a.collected-del-filter{
+	display:inline-block;
+	margin-left:10px;
+}
+
+#collected-filter .irs {
+    position: relative; display: block;
+}
+    #collected-filter .irs-line {
+        position: relative; display: block;
+        overflow: hidden;
+    }
+        #collected-filter .irs-line-left, #collected-filter .irs-line-mid, #collected-filter .irs-line-right {
+            position: absolute; display: block;
+            top: 0;
+        }
+        #collected-filter .irs-line-left {
+            left: 0; width: 0%;
+        }
+        #collected-filter .irs-line-mid {
+            left: 10%;
+        }
+        #collected-filter .irs-line-right {
+            right: 0; width: 0%;
+        }
+
+    #collected-filter .irs-diapason, #collected-filter .irs-diapason-left, #collected-filter .irs-diapason-right {
+        position: absolute; display: block;
+        left: 0; width: 100%;
+    }
+    #collected-filter .irs-slider {
+        position: absolute; display: block;
+        cursor: default;
+        z-index: 1;
+    }
+        #collected-filter .irs-slider.single {
+            left: 10px;
+        }
+            #collected-filter .irs-slider.single:before {
+                position: absolute; display: block; content: "";
+                top: -50%; left: -100%;
+                width: 300%; height: 200%;
+                background: rgba(0,0,0,0.0);
+            }
+        #collected-filter .irs-slider.from {
+            left: 100px;
+        }
+            #collected-filter .irs-slider.from:before {
+                position: absolute; display: block; content: "";
+                top: -50%; left: -200%;
+                width: 300%; height: 200%;
+                background: rgba(0,0,0,0.0);
+            }
+        #collected-filter .irs-slider.to {
+            left: 300px;
+        }
+            #collected-filter .irs-slider.to:before {
+                position: absolute; display: block; content: "";
+                top: -50%; left: 0;
+                width: 300%; height: 200%;
+                background: rgba(0,0,0,0.0);
+            }
+        #collected-filter .irs-slider.last {
+            z-index: 2;
+        }
+
+    #collected-filter .irs-min {
+        position: absolute; display: block;
+        left: 0;
+        cursor: default;
+    }
+    #collected-filter .irs-max {
+        position: absolute; display: block;
+        right: 0;
+        cursor: default;
+    }
+
+    #collected-filter .irs-from, #collected-filter .irs-to, #collected-filter .irs-single {
+        position: absolute; display: block;
+        bottom: 0; left: 0;
+        cursor: default;
+        white-space: nowrap;
+		margin-bottom:-17px;
+    }
+	
+	#collected-filter .irs-from {
+		margin-left:-7px;
+    }
+	
+	#collected-filter .irs-to {
+		margin-left:10px;
+    }
+
+
+#collected-filter .irs-grid {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 20px;
+}
+#collected-filter .irs-with-grid #collected-filter .irs-grid {
+    display: block;
+}
+    #collected-filter .irs-grid-pol {
+        position: absolute;
+        bottom: 0; left: 0;
+        width: 1px; height: 8px;
+        background: #000;
+    }
+    #collected-filter .irs-grid-pol.small {
+        height: 4px;
+    }
+    #collected-filter .irs-grid-text {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100px;
+        white-space: nowrap;
+        text-align: center;
+        font-size: 9px; line-height: 9px;
+        color: #000;
+    }
+	
+#collected-filter .irs-line-mid,
+#collected-filter .irs-line,
+#collected-filter .irs-diapason-left,
+#collected-filter .irs-diapason-right,
+#collected-filter .irs-slider {
+    background: url(images/slider.png) repeat-x;
+}
+
+#collected-filter .irs {
+    height: 40px;
+}
+#collected-filter .irs-with-grid {
+    margin-top: 10px;
+}
+#collected-filter .irs-line {
+    height: 8px; top: 25px;
+	 background-position: 0 0;
+}
+    #collected-filter .irs-line-left {
+        height: 8px;
+        background-position: 0 -30px;
+    }
+    #collected-filter .irs-line-mid {
+        height: 6px;
+        background-position: left bottom;
+    }
+    #collected-filter .irs-line-right {
+        height: 8px;
+        background-position: 100% -30px;
+    }
+
+#collected-filter .irs-diapason, #collected-filter .irs-diapason-left, #collected-filter .irs-diapason-right {
+    height: 8px; top: 25px;
+    background-position: 0 -60px;
+}
+
+#collected-filter .irs-diapason{
+	background:none;
+}
+
+#collected-filter .irs-slider {
+    width: 22px; height: 22px;
+    top: 17px;
+    background-position: 0 -90px;
+}
+
+#collected-filter .irs-min, #collected-filter .irs-max {
+    color: #999;
+    font-size: 10px; line-height: 1.333;
+    text-shadow: none;
+    top: 0; padding: 1px 3px;
+    background: rgba(0,0,0,0.1);
+    border-radius: 3px;
+}
+.lt-ie9 #collected-filter .irs-min, .lt-ie9 #collected-filter .irs-max {
+    background: #ccc;
+}
+
+#collected-filter .irs-from, #collected-filter .irs-to, #collected-filter .irs-single {
+    color: #fff;
+    font-size: 10px; line-height: 1.333;
+    text-shadow: none;
+    padding: 1px 5px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 3px;
+	display:none !important;
+}
+.lt-ie9 #collected-filter .irs-from, .lt-ie9 #collected-filter .irs-to, .lt-ie9 #collected-filter .irs-single {
+    background: #999;
+}
+
+#collected-filter .irs-grid-pol {
+    background: #99a4ac;
+}
+#collected-filter .irs-grid-text {
+    color: #99a4ac;
+}
+
+#collected-filter .irs-slider.from {
+	background-position:-4px -75px;
+	width: 13px;
+	height: 28px;
+	margin-left: -6px;
+}
+
+#collected-filter .irs-slider.to {
+	background-position:-4px -75px;
+	width: 13px;
+	height: 28px;
+	margin-left: -7px;
+}
+
+#irs-active-slider, #collected-filter .irs-slider:hover {
+    background-position: -4px -105px;
+}

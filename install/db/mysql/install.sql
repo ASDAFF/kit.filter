@@ -1,4 +1,4 @@
-CREATE TABLE b_kombox_filter_prop_settings (
+CREATE TABLE b_collected_filter_prop_settings (
 	ID int(18) NOT NULL AUTO_INCREMENT,
 	PROPERTY_ID int(11) NOT NULL,
 	HINT_TYPE varchar(255) NOT NULL DEFAULT 'html',

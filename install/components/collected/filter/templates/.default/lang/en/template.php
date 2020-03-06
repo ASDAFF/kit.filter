@@ -1,0 +1,13 @@
+<?
+
+/**
+ * Copyright (c) 6/3/2020 Created By/Edited By ASDAFF asdaff.asad@yandex.ru
+ */
+
+$MESS["COLLECTED_CMP_FILTER_FROM"] = "from";
+$MESS["COLLECTED_CMP_FILTER_TO"] = "to";
+$MESS["COLLECTED_CMP_FILTER_SET_FILTER"] = "Show";
+$MESS["COLLECTED_CMP_FILTER_DEL_FILTER"] = "Reset";
+$MESS["COLLECTED_CMP_FILTER_FILTER_COUNT"] = "Selected: #ELEMENT_COUNT#";
+$MESS["COLLECTED_CMP_FILTER_FILTER_SHOW"] = "Show";
+?>
