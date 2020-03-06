@@ -1,0 +1,542 @@
+#kombox-filter{
+	border: 2px solid #ffea94;
+	margin-top: 1em;
+	margin-bottom: 2em;
+	padding: 10px 10px 10px 10px;
+	position: relative;
+	background: white;
+}
+
+#kombox-filter form{
+	width:100%;
+	list-style: none !important;
+	margin:0;
+	padding:0;
+}
+
+#kombox-filter .lvl1{
+	list-style: none !important;
+	margin:0;
+	padding:0;
+	margin-top: .7em;
+	text-indent: 0 !important;
+	position: relative;
+}
+
+#kombox-filter .lvl1.kombox-column {
+	width: 33%;
+	float: left;
+}
+
+#kombox-filter td{
+	margin:0;
+	padding:0;
+}
+
+#kombox-filter .lvl2{
+	margin:0;
+	padding: 4px 20px 4px 0;
+	width:auto;
+}
+
+#kombox-filter .lvl1:before, #kombox-filter li:before {
+	content: none !important;
+}
+
+#kombox-filter .kombox-filter-property-head {
+	zoom: 1;
+	padding: .8em 15px 5px 5px;
+	text-align:right;
+	width: 180px;
+	float:left;
+	height:auto;
+}
+
+#kombox-filter .lvl1.kombox-column .kombox-filter-property-head {
+	zoom: 1;
+	text-align:left;
+	float:none;
+	height:auto;
+}
+
+#kombox-filter .kombox-filter-property-name {
+	position: relative;
+	font-weight:bold;
+}
+
+#kombox-filter .kombox-middle{
+	vertical-align:middle;
+}
+
+#kombox-filter .kombox-num,
+#kombox-filter .kombox-combo{
+	 overflow: hidden;
+}
+
+#kombox-filter .kombox-num .kombox-input{
+	width: 4em;
+	margin:0;
+}
+
+#kombox-filter .kombox-num table{
+	width:100%;
+	font-size: inherit;
+}
+
+#kombox-filter .kombox-from{
+	vertical-align:middle;
+	white-space:nowrap;
+}
+
+#kombox-filter .kombox-to{
+	vertical-align:middle;
+	white-space:nowrap;
+}
+
+#kombox-filter .kombox-num .kombox-range{
+	padding:0 20px 0 20px;
+	width:100%;
+}
+
+#kombox-filter .kombox-num .kombox-input{
+	width: 4em;
+	margin:0;
+}
+
+#kombox-filter .kombox-num .kombox-range input{
+	display:none;
+}
+
+#kombox-filter .kombox-filter-property-body{
+	padding: 5px 0 0 5px;
+	margin: 0;
+}
+
+#kombox-filter div.kombox-combo, 
+#kombox-filter div.kombox-radio
+{
+	padding: 5px 0 0 15px;
+	margin: 0;
+}
+
+#kombox-filter div.kombox-link
+{
+	padding: 0 0 0 15px;
+	margin: 0;
+}
+
+#kombox-filter div.kombox-select,
+#kombox-filter div.kombox-list
+{
+	padding: 0;
+	margin: 0;
+}
+
+#kombox-filter .kombox-select select,
+#kombox-filter .kombox-list select
+{
+	padding: 5px;
+	width:75%;
+}
+
+#kombox-filter .kombox-combo .lvl2 input,
+#kombox-filter .kombox-radio .lvl2 input{
+	margin:0;
+}
+
+#kombox-filter .kombox-combo .lvl2 label,
+#kombox-filter .kombox-radio .lvl2 label{
+	padding-left: 7px;
+}
+
+#kombox-filter ul li .kombox-disabled label,
+#kombox-filter ul li .kombox-disabled a,
+#kombox-filter ul li option.kombox-disabled{
+	color: #6f7980;
+}
+
+#kombox-filter .kombox-link  .lvl2{
+	padding-left: 8px;
+	position: relative;
+	left: -8px;
+}
+
+#kombox-filter .kombox-link .kombox-checked{
+	padding-left: 0;
+}
+
+#kombox-filter .kombox-link  .lvl2 a{
+	padding: 2px 0 1px 0;
+	display: inline-block;
+}
+
+#kombox-filter .kombox-link .kombox-checked a{
+	border: 1px solid #e7e7e7;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	color: #3f454b;
+	padding: 1px 22px 1px 8px;
+	position: relative;
+}
+
+#kombox-filter .kombox-link .kombox-checked a:hover{
+	border-color: #fbdada;
+}
+
+#kombox-filter .kombox-link  .lvl2 a span.kombox-remove-link{
+	background: #ffffff url("images/remove_link.png") no-repeat 0 0;
+	display: none;
+	height: 8px;
+	margin-left: 8px;
+	position: absolute;
+	right: 8px;
+	top: 6px;
+	width: 8px;
+}
+
+#kombox-filter .kombox-link .kombox-checked a span.kombox-remove-link{
+	display: inline-block;
+}
+
+#kombox-filter .kombox-link .kombox-checked a:hover span.kombox-remove-link{
+	background-position: 0 100%;
+}
+
+#kombox-filter .kombox-link .kombox-disabled a{
+	color: #6f7980 !important;
+	border:none;
+	text-decoration:line-through;
+}
+
+#kombox-filter .kombox-disabled a{
+	border:none;
+	text-decoration:line-through;
+}
+
+#kombox-filter .lvl2 .kombox-cnt{
+	color: #6f7980;
+	font-size: .85em;
+}
+
+#kombox-filter .kombox-disabled .kombox-cnt, .kombox-filter .kombox-checked .kombox-cnt{
+	display:none;
+}
+
+#kombox-filter .kombox-checked a{
+	border:none;
+	color:#000;
+}
+
+#kombox-filter .kombox-filter-property-body a.kombox-values-other-show,
+#kombox-filter .kombox-filter-property-body a.kombox-values-other-hide{
+	font-size: .85em;
+	display:inline-block;
+	margin-top:5px;
+	border:0;
+}
+
+#kombox-filter .kombox-filter-property-hint{
+	cursor: pointer;
+	position: relative;
+	top: 2px;
+	width: 12px;
+	height: 12px;
+	margin-left:5px;
+	display: inline-block;
+	background: rgba(0, 0, 0, 0) url(images/hint.gif) no-repeat right center;
+}
+
+#kombox-filter .kombox-filter-property-hint-text{
+	display:none;
+}
+
+.kombox-filter-hint{
+	padding:5px 10px 5px 5px;
+	max-width: 500px;
+}
+
+#kombox-filter .modef {
+	background: transparent url('images/modef.gif') no-repeat right center;
+	top: 4px;
+	position: absolute;
+	padding-right:5px;
+	z-index:1000;
+}
+
+#kombox-filter .modef-right {
+	background: transparent url('images/modef-right.gif') no-repeat left center;
+	padding-left:5px;
+}
+
+#kombox-filter .modef .modef-wrap {
+	background-color:#fff;
+	border: 1px solid #ffea94;
+	border-right:none;
+	color: #3F3F3F;
+	padding: 5px 25px 5px 10px;
+	white-space: nowrap;
+}
+
+#kombox-filter .modef-right .modef-wrap {
+	border: 1px solid #ffea94;
+	border-left:none;
+}
+
+a.kombox-del-filter{
+	display:inline-block;
+	margin-right:10px;
+}
+
+#kombox-filter .kombox-clear{
+	clear:both;
+	height:1px;
+	width: 100%;
+	display: inline-block;
+}
+
+#kombox-filter .kombox-footer{
+	clear:both;
+	padding:0 20px 0 0;
+}
+
+#kombox-filter .kombox-filter-show-properties{
+	text-align:left;
+	float:left;
+	padding: 1em 15px 0 5px;
+	
+}
+
+#kombox-filter .kombox-show .kombox-show{
+	display:inline;
+}
+
+#kombox-filter .kombox-hide .kombox-show{
+	display:none;
+}
+
+#kombox-filter .kombox-hide .kombox-hide{
+	display:inline;
+}
+
+#kombox-filter .kombox-show .kombox-hide{
+	display:none;
+}
+
+#kombox-filter .kombox-filter-submit{
+	padding: 1em 0 0 15px;
+	overflow:hidden;
+	float:right;
+}
+
+#kombox-filter .irs {
+    position: relative; display: block;
+}
+    #kombox-filter .irs-line {
+        position: relative; display: block;
+        overflow: hidden;
+    }
+        #kombox-filter .irs-line-left, #kombox-filter .irs-line-mid, #kombox-filter .irs-line-right {
+            position: absolute; display: block;
+            top: 0;
+        }
+        #kombox-filter .irs-line-left {
+            left: 0; width: 0%;
+        }
+        #kombox-filter  .irs-line-mid {
+            left: 10%;
+        }
+        #kombox-filter .irs-line-right {
+            right: 0; width: 0%;
+        }
+
+    #kombox-filter .irs-diapason, #kombox-filter .irs-diapason-left, #kombox-filter .irs-diapason-right {
+        position: absolute; display: block;
+        left: 0; width: 100%;
+    }
+    #kombox-filter .irs-slider {
+        position: absolute; display: block;
+        cursor: default;
+        z-index: 1;
+    }
+        #kombox-filter .irs-slider.single {
+            left: 10px;
+        }
+            #kombox-filter .irs-slider.single:before {
+                position: absolute; display: block; content: "";
+                top: -50%; left: -100%;
+                width: 300%; height: 200%;
+                background: rgba(0,0,0,0.0);
+            }
+        #kombox-filter .irs-slider.from {
+            left: 100px;
+        }
+            #kombox-filter .irs-slider.from:before {
+                position: absolute; display: block; content: "";
+                top: -50%; left: -200%;
+                width: 300%; height: 200%;
+                background: rgba(0,0,0,0.0);
+            }
+        #kombox-filter .irs-slider.to {
+            left: 300px;
+        }
+            #kombox-filter .irs-slider.to:before {
+                position: absolute; display: block; content: "";
+                top: -50%; left: 0;
+                width: 300%; height: 200%;
+                background: rgba(0,0,0,0.0);
+            }
+        #kombox-filter .irs-slider.last {
+            z-index: 2;
+        }
+
+    #kombox-filter .irs-min {
+        position: absolute; display: block;
+        left: 0;
+        cursor: default;
+    }
+    #kombox-filter .irs-max {
+        position: absolute; display: block;
+        right: 0;
+        cursor: default;
+    }
+
+    #kombox-filter .irs-from, #kombox-filter .irs-to, #kombox-filter .irs-single {
+        position: absolute; display: block;
+        bottom: 0; left: 0;
+        cursor: default;
+        white-space: nowrap;
+		margin-bottom:-17px;
+    }
+	
+	#kombox-filter .irs-from {
+		margin-left:-7px;
+    }
+	
+	#kombox-filter .irs-to {
+		margin-left:10px;
+    }
+
+#kombox-filter .irs-grid {
+    position: absolute; display: none;
+    top: 0; left: 0;
+    width: 100%; height: 20px;
+}
+#kombox-filter .irs-with-grid .irs-grid {
+    display: block;
+}
+    #kombox-filter .irs-grid-pol {
+        position: absolute;
+        bottom: 0; left: 0;
+        width: 1px; height: 8px;
+        background: #000;
+    }
+    #kombox-filter .irs-grid-pol.small {
+        height: 4px;
+    }
+    #kombox-filter .irs-grid-text {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100px;
+        white-space: nowrap;
+        text-align: center;
+        font-size: 9px; line-height: 9px;
+        color: #000;
+    }
+	
+#kombox-filter .irs-line-mid,
+#kombox-filter .irs-line,
+#kombox-filter .irs-diapason-left, 
+#kombox-filter .irs-diapason-right,
+#kombox-filter .irs-slider {
+    background: url(images/slider.png) repeat-x;
+}
+
+#kombox-filter .irs {
+    height: 40px;
+}
+#kombox-filter .irs-with-grid {
+    margin-top: 0;
+}
+#kombox-filter .irs-line {
+    height: 8px; top: 25px;
+	 background-position: 0 0;
+}
+    #kombox-filter .irs-line-left {
+        height: 8px;
+        background-position: 0 -30px;
+    }
+    #kombox-filter .irs-line-mid {
+        height: 6px;
+        background-position: left bottom;
+    }
+    #kombox-filter .irs-line-right {
+        height: 8px;
+        background-position: 100% -30px;
+    }
+
+#kombox-filter .irs-diapason, #kombox-filter .irs-diapason-left, #kombox-filter .irs-diapason-right {
+    height: 8px; top: 25px;
+    background-position: 0 -60px;
+}
+
+#kombox-filter .irs-diapason{
+	background:none;
+}
+
+#kombox-filter .irs-slider {
+    width: 22px; height: 22px;
+    top: 17px;
+    background-position: 0 -90px;
+}
+
+#kombox-filter .irs-min, #kombox-filter .irs-max {
+    color: #999;
+    font-size: 10px; line-height: 1.333;
+    text-shadow: none;
+    top: 0; padding: 1px 3px;
+    background: rgba(0,0,0,0.1);
+    border-radius: 3px;
+}
+#kombox-filter .lt-ie9 .irs-min, #kombox-filter .lt-ie9 .irs-max {
+    background: #ccc;
+}
+
+#kombox-filter .irs-from, #kombox-filter .irs-to, #kombox-filter .irs-single {
+    color: #fff;
+    font-size: 10px; line-height: 1.333;
+    text-shadow: none;
+    padding: 1px 5px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 3px;
+	display:none !important;
+}
+#kombox-filter .lt-ie9 .irs-from, #kombox-filter .lt-ie9 .irs-to, #kombox-filter .lt-ie9 .irs-single {
+    background: #999;
+}
+
+#kombox-filter .irs-grid-pol {
+    background: #99a4ac;
+}
+
+#kombox-filter .irs-grid-text {
+    color: #99a4ac;
+}
+
+#kombox-filter .irs-slider.from {
+	background-position:-4px -75px;
+	width: 13px;
+	height: 28px;
+	margin-left: -6px;
+}
+
+#kombox-filter .irs-slider.to {
+	background-position:-4px -75px;
+	width: 13px;
+	height: 28px;
+	margin-left: -7px;
+}
+
+#irs-active-slider, .irs-slider:hover {
+    background-position: -4px -105px;
+}
