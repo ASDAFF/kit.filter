@@ -31,7 +31,7 @@ if ($verticalGrid)
         ?>
         <?
         $APPLICATION->IncludeComponent(
-            "kombox:filter",
+            "collected:filter",
             "",
             array(
                 "IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],

@@ -72,7 +72,7 @@ $APPLICATION->IncludeComponent(
 ```php
 <?
 $APPLICATION->IncludeComponent(
-	"kombox:filter", 
+	"collected:filter", 
 	"", //шаблон - .default (можно указать horizontal, bitronic-vertical или bitronic-horizontal)
 	array(
 		"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
