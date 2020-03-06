@@ -42,3 +42,6 @@
  
 [Настройки модуля](help/setting.md)
 [Описание компонента](help/descriptions.md)
+[Настройка свойств](help/setting_props.md)
+[Я хочу, чтобы фильтр работал только в каталоге](help/filter_catalog.md)
+[Комплексный компонент каталога](help/complex_filter_catalog.md)
