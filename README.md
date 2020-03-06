@@ -1,1 +1,1 @@
-# collected.smartfilter
+# collected.filter
