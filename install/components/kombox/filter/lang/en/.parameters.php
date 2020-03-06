@@ -1,0 +1,31 @@
+<?
+$MESS["KOMBOX_CMP_FILTER_PRICES"] = "Prices";
+$MESS["KOMBOX_CMP_FILTER_IBLOCK_TYPE"] = "Infoblock type";
+$MESS["KOMBOX_CMP_FILTER_IBLOCK_ID"] = "Infoblock";
+$MESS["KOMBOX_CMP_FILTER_PRICE_CODE"] = "Price type";
+$MESS["KOMBOX_CMP_FILTER_FILTER_NAME"] = "Name of result filter array";
+$MESS["KOMBOX_CMP_FILTER_SAVE_IN_SESSION"] = "Store filter settings in user session";
+$MESS["KOMBOX_CMP_FILTER_CACHE_GROUPS"] = "Respect Access Permissions";
+$MESS["KOMBOX_CMP_FILTER_SECTION_ID"] = "Information block section ID";
+$MESS["KOMBOX_CMP_FILTER_SECTION_CODE"] = "Information block section code";
+$MESS["KOMBOX_CMP_FILTER_INSTANT_RELOAD"] = "Instant filter using AJAX";
+$MESS["KOMBOX_CMP_FILTER_CLOSED_PROPERTY_CODE"] = "Closed properties";
+$MESS["KOMBOX_CMP_FILTER_CLOSED_OFFERS_PROPERTY_CODE"] = "Closed offers properties";
+$MESS["KOMBOX_CMP_FILTER_INCLUDE_JQUERY"] = "Include jquery library";
+$MESS["KOMBOX_CMP_FILTER_GROUP_XML_EXPORT"] = "Support Yandex Islands";
+$MESS["KOMBOX_CMP_FILTER_XML_EXPORT"] = "Enabled support Yandex Islands";
+$MESS["KOMBOX_CMP_FILTER_SECTION_TITLE"] = "Headers";
+$MESS["KOMBOX_CMP_FILTER_SECTION_DESCRIPTION"] = "Description";
+$MESS["KOMBOX_CMP_FILTER_IS_SEF"] = "Turn on SEF support";
+$MESS["KOMBOX_CMP_FILTER_SEF_BASE_URL"] = "Url to catalog";
+$MESS["KOMBOX_CMP_FILTER_SECTION_PAGE_URL"] = "Url template to section";
+$MESS["KOMBOX_CMP_FILTER_PAGE_URL"] = "Url to section";
+$MESS["KOMBOX_CMP_FILTER_MESSAGE_ALIGN"] = "Display a message with the count of items found";
+$MESS["KOMBOX_CMP_FILTER_MESSAGE_ALIGN_LEFT"] = "Left";
+$MESS["KOMBOX_CMP_FILTER_MESSAGE_ALIGN_RIGHT"] = "Right";
+$MESS["KOMBOX_CMP_FILTER_MESSAGE_TIME"] = "How many seconds to hide message (0 - don't hide)";
+$MESS["KOMBOX_CMP_FILTER_CONVERT_CURRENCY"] = "Use only one currency to show prices";
+$MESS["KOMBOX_CMP_FILTER_CURRENCY_ID"] = "Convert all prices to currency";
+$MESS["KOMBOX_CMP_FILTER_SHOW_STORES_FILTER"] = "Show filter by stores";
+$MESS["KOMBOX_CMP_FILTER_HIDE_NOT_AVAILABLE"] = "Hide items not in stock";
+?>

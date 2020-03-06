@@ -1,0 +1,1 @@
+DROP TABLE IF EXISTS b_kombox_filter_prop_settings;
