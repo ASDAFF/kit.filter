@@ -10,19 +10,19 @@ Loc::loadMessages(__FILE__);
 
 if (!Loader::includeModule('iblock'))
 {
-	$APPLICATION->ThrowException(Loc::getMessage('COLLECTED_MODULE_FILTER_ERROR_IBLOCK_NOT_INSTALLED'));
+	$APPLICATION->ThrowException(Loc::getMessage('KIT_MODULE_FILTER_ERROR_IBLOCK_NOT_INSTALLED'));
 	return false;
 }
 
 CModule::AddAutoloadClasses(
-	"collected.filter",
+	"kit.filter",
 	array(
-		"Collected\\Filter\\PropertySettingsTable" => "lib/property_settings.php",
-		"\\Collected\\Filter\\PropertySettingsTable" => "lib/property_settings.php"
+		"Kit\\Filter\\PropertySettingsTable" => "lib/property_settings.php",
+		"\\Kit\\Filter\\PropertySettingsTable" => "lib/property_settings.php"
 	)
 );
 
-class CCollectedFilter
+class CKitFilter
 {
 	private static $bSefMode = false;
 	private static $sDocPath2 = '';
@@ -36,7 +36,7 @@ class CCollectedFilter
 		}
 		elseif(strlen($url))
 		{
-			$strPath = COption::GetOptionString('collected.filter', "sef_paths");
+			$strPath = COption::GetOptionString('kit.filter', "sef_paths");
 			$arPath = explode(';', $strPath);
 			
 			if(!count($arPath))
@@ -93,7 +93,7 @@ class CCollectedFilter
 	public static function OnBeforeProlog() {
         if(!defined("ADMIN_SECTION") || ADMIN_SECTION !== true)
 		{	
-			$strPath = COption::GetOptionString('collected.filter', "sef_paths");
+			$strPath = COption::GetOptionString('kit.filter', "sef_paths");
 			$arPath = explode(';', $strPath);
 			$isBitronic = CModule::IncludeModule('yenisite.bitronic') || CModule::IncludeModule('yenisite.bitronicpro') || CModule::IncludeModule('yenisite.bitroniclite');
 			
@@ -249,7 +249,7 @@ class CCollectedFilter
 			if(!intval($IBLOCK_ID))
 				$IBLOCK_ID = $_REQUEST['PARAMS']['IBLOCK_ID'];
 				
-			$iblocks = COption::GetOptionString('collected.filter', "iblocks");
+			$iblocks = COption::GetOptionString('kit.filter', "iblocks");
 	
 			if(strlen($iblocks))
 				$iblocks = unserialize($iblocks);
@@ -280,11 +280,11 @@ class CCollectedFilter
 			if(!in_array($PROPERTY_TYPE, array('S', 'N', 'L', 'G', 'E', 'S:UserID', 'G:SectionAuto', 'E:SKU', 'E:EList', 'S:ElementXmlID', 'E:EAutocomplete', 'S:directory', 'S:TopicID', 'N:Sequence')))
 				return;
 			
-			CJSCore::RegisterExt('collected_edit_property', array(
-				'js' => '/bitrix/js/collected/filter/edit_property.js', 
+			CJSCore::RegisterExt('kit_edit_property', array(
+				'js' => '/bitrix/js/kit/filter/edit_property.js', 
 				'rel' => array('jquery'),
 			));
-			CJSCore::Init(array('collected_edit_property'));
+			CJSCore::Init(array('kit_edit_property'));
 			
 			$arSettings = $_REQUEST;
 			$arSettings['sessid'] = bitrix_sessid();
@@ -295,7 +295,7 @@ class CCollectedFilter
 			ob_start();?>
 			<script type="text/javascript">
 				$(function(){
-					loadCollectedEditPropertySettings(<?echo CUtil::PhpToJsObject($arSettings);?>);
+					loadKitEditPropertySettings(<?echo CUtil::PhpToJsObject($arSettings);?>);
 				});
 			</script>
 			<?
@@ -344,23 +344,23 @@ class CCollectedFilter
 				}
 			}
 
-			if(is_array($arFields['USER_TYPE_SETTINGS']) && strlen($arFields['USER_TYPE_SETTINGS']['COLLECTED_VIEW']))
+			if(is_array($arFields['USER_TYPE_SETTINGS']) && strlen($arFields['USER_TYPE_SETTINGS']['KIT_VIEW']))
 			{
 				$arSettings = array(
 					'PROPERTY_ID' => $arFields['ID'],
-					'HINT_TYPE' => in_array($arFields['USER_TYPE_SETTINGS']['COLLECTED_HINT_TYPE'], array('text', 'text')) ? $arFields['USER_TYPE_SETTINGS']['COLLECTED_HINT_TYPE'] : 'html',
-					'HINT' => $arFields['USER_TYPE_SETTINGS']['COLLECTED_HINT'],
-					'VIEW' => $arFields['USER_TYPE_SETTINGS']['COLLECTED_VIEW'],
-					'SLIDER_STEP' => floatval($arFields['USER_TYPE_SETTINGS']['COLLECTED_SLIDER_STEP']),
-					'SLIDER_UNITS' => trim($arFields['USER_TYPE_SETTINGS']['COLLECTED_SLIDER_UNITS']),
-					'LIST_SIZE' => intval($arFields['USER_TYPE_SETTINGS']['COLLECTED_LIST_SIZE']) > 0 ? intval($arFields['USER_TYPE_SETTINGS']['COLLECTED_LIST_SIZE']) : 1,
-					'LIST_MULTI' => isset($arFields['USER_TYPE_SETTINGS']['COLLECTED_LIST_MULTI']) ? 'Y' : 'N',
-					'VALUES_CNT' => intval($arFields['USER_TYPE_SETTINGS']['COLLECTED_VALUES_CNT']),
-					'SORT' => strlen($arFields['USER_TYPE_SETTINGS']['COLLECTED_SORT']) ? $arFields['USER_TYPE_SETTINGS']['COLLECTED_SORT'] : 'NAME',
-					'SORT_ORDER' => strlen($arFields['USER_TYPE_SETTINGS']['COLLECTED_SORT_ORDER']) ? $arFields['USER_TYPE_SETTINGS']['COLLECTED_SORT_ORDER'] : 'ASC'
+					'HINT_TYPE' => in_array($arFields['USER_TYPE_SETTINGS']['KIT_HINT_TYPE'], array('text', 'text')) ? $arFields['USER_TYPE_SETTINGS']['KIT_HINT_TYPE'] : 'html',
+					'HINT' => $arFields['USER_TYPE_SETTINGS']['KIT_HINT'],
+					'VIEW' => $arFields['USER_TYPE_SETTINGS']['KIT_VIEW'],
+					'SLIDER_STEP' => floatval($arFields['USER_TYPE_SETTINGS']['KIT_SLIDER_STEP']),
+					'SLIDER_UNITS' => trim($arFields['USER_TYPE_SETTINGS']['KIT_SLIDER_UNITS']),
+					'LIST_SIZE' => intval($arFields['USER_TYPE_SETTINGS']['KIT_LIST_SIZE']) > 0 ? intval($arFields['USER_TYPE_SETTINGS']['KIT_LIST_SIZE']) : 1,
+					'LIST_MULTI' => isset($arFields['USER_TYPE_SETTINGS']['KIT_LIST_MULTI']) ? 'Y' : 'N',
+					'VALUES_CNT' => intval($arFields['USER_TYPE_SETTINGS']['KIT_VALUES_CNT']),
+					'SORT' => strlen($arFields['USER_TYPE_SETTINGS']['KIT_SORT']) ? $arFields['USER_TYPE_SETTINGS']['KIT_SORT'] : 'NAME',
+					'SORT_ORDER' => strlen($arFields['USER_TYPE_SETTINGS']['KIT_SORT_ORDER']) ? $arFields['USER_TYPE_SETTINGS']['KIT_SORT_ORDER'] : 'ASC'
 				);
 				
-				$rsPropertySettings = Collected\Filter\PropertySettingsTable::getList(
+				$rsPropertySettings = Kit\Filter\PropertySettingsTable::getList(
 					array(
 						'select' => array('ID'),
 						'filter' => array('PROPERTY_ID' => $arFields['ID'])
@@ -369,11 +369,11 @@ class CCollectedFilter
 				
 				if($arPropertySettings = $rsPropertySettings->Fetch())
 				{
-					Collected\Filter\PropertySettingsTable::update($arPropertySettings['ID'], $arSettings);
+					Kit\Filter\PropertySettingsTable::update($arPropertySettings['ID'], $arSettings);
 				}
 				else
 				{
-					Collected\Filter\PropertySettingsTable::add($arSettings);
+					Kit\Filter\PropertySettingsTable::add($arSettings);
 				}
 			}
 			
@@ -400,7 +400,7 @@ class CCollectedFilter
     {
 		if(intval($ID))
 		{
-			$rsPropertySettings = Collected\Filter\PropertySettingsTable::getList(
+			$rsPropertySettings = Kit\Filter\PropertySettingsTable::getList(
 				array(
 					'select' =>array('ID'),
 					'filter'=>array('PROPERTY_ID' => $ID),
@@ -409,7 +409,7 @@ class CCollectedFilter
 			
 			if($arPropertySettings = $rsPropertySettings->Fetch())
 			{
-				Collected\Filter\PropertySettingsTable::delete($arPropertySettings['ID']);
+				Kit\Filter\PropertySettingsTable::delete($arPropertySettings['ID']);
 			}
 		}
     }
@@ -544,7 +544,7 @@ class CCollectedFilter
 	}
 }
 
-class CCollectedFilterIBlock extends CIBlockElement
+class CKitFilterIBlock extends CIBlockElement
 {
 	public static function GetPropertyValues($IBLOCK_ID, $arElementFilter, $arProperties = array(), $extMode = false)
     {

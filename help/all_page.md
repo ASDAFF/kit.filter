@@ -16,7 +16,7 @@
 
 ```php
 <?$APPLICATION->IncludeComponent(
-	"collected:filter",
+	"kit:filter",
 	"bitronic-vertical",
 	Array(
 		"IBLOCK_TYPE" => "catalog",

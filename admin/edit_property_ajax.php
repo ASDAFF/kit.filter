@@ -19,7 +19,7 @@ header('Content-Type: application/x-javascript; charset='.LANG_CHARSET);
 
 if ($USER->IsAuthorized() && check_bitrix_sessid() && intval($_REQUEST['ID']) && intval($_REQUEST['IBLOCK_ID']))
 {
-	if (!Loader::includeModule('iblock') || !Loader::includeModule('collected.filter'))
+	if (!Loader::includeModule('iblock') || !Loader::includeModule('kit.filter'))
 	{
 		echo CUtil::PhpToJsObject(array('ERROR' => 'SS_MODULE_NOT_INSTALLED'));
 		die();
@@ -76,9 +76,9 @@ if ($USER->IsAuthorized() && check_bitrix_sessid() && intval($_REQUEST['ID']) &&
 		}
 	}
 	
-	if(!isset($arProperty['USER_TYPE_SETTINGS']['COLLECTED_VIEW']) && $ID)
+	if(!isset($arProperty['USER_TYPE_SETTINGS']['KIT_VIEW']) && $ID)
 	{
-		$rsPropertySettings = \Collected\Filter\PropertySettingsTable::getList(array(
+		$rsPropertySettings = \Kit\Filter\PropertySettingsTable::getList(array(
 			'filter' => array('PROPERTY_ID' => $ID)
 		));
 		
@@ -87,43 +87,43 @@ if ($USER->IsAuthorized() && check_bitrix_sessid() && intval($_REQUEST['ID']) &&
 			if(!isset($arProperty['USER_TYPE_SETTINGS']))
 				$arProperty['USER_TYPE_SETTINGS'] = array();
 				
-			$arProperty['USER_TYPE_SETTINGS']['COLLECTED_HINT_TYPE'] = $arPropertySettings['HINT_TYPE'];
-			$arProperty['USER_TYPE_SETTINGS']['COLLECTED_HINT'] = $arPropertySettings['HINT'];
-			$arProperty['USER_TYPE_SETTINGS']['COLLECTED_VIEW'] = $arPropertySettings['VIEW'];
-			$arProperty['USER_TYPE_SETTINGS']['COLLECTED_SLIDER_STEP'] = $arPropertySettings['SLIDER_STEP'];
-			$arProperty['USER_TYPE_SETTINGS']['COLLECTED_SLIDER_UNITS'] = $arPropertySettings['SLIDER_UNITS'];
-			$arProperty['USER_TYPE_SETTINGS']['COLLECTED_LIST_SIZE'] = $arPropertySettings['LIST_SIZE'];
-			$arProperty['USER_TYPE_SETTINGS']['COLLECTED_LIST_MULTI'] = $arPropertySettings['LIST_MULTI'];
-			$arProperty['USER_TYPE_SETTINGS']['COLLECTED_VALUES_CNT'] = $arPropertySettings['VALUES_CNT'];
-			$arProperty['USER_TYPE_SETTINGS']['COLLECTED_SORT'] = $arPropertySettings['SORT'];
-			$arProperty['USER_TYPE_SETTINGS']['COLLECTED_SORT_ORDER'] = $arPropertySettings['SORT_ORDER'];
-			$arProperty['USER_TYPE_SETTINGS']['COLLECTED_LOGIC'] = $arPropertySettings['LOGIC'];
+			$arProperty['USER_TYPE_SETTINGS']['KIT_HINT_TYPE'] = $arPropertySettings['HINT_TYPE'];
+			$arProperty['USER_TYPE_SETTINGS']['KIT_HINT'] = $arPropertySettings['HINT'];
+			$arProperty['USER_TYPE_SETTINGS']['KIT_VIEW'] = $arPropertySettings['VIEW'];
+			$arProperty['USER_TYPE_SETTINGS']['KIT_SLIDER_STEP'] = $arPropertySettings['SLIDER_STEP'];
+			$arProperty['USER_TYPE_SETTINGS']['KIT_SLIDER_UNITS'] = $arPropertySettings['SLIDER_UNITS'];
+			$arProperty['USER_TYPE_SETTINGS']['KIT_LIST_SIZE'] = $arPropertySettings['LIST_SIZE'];
+			$arProperty['USER_TYPE_SETTINGS']['KIT_LIST_MULTI'] = $arPropertySettings['LIST_MULTI'];
+			$arProperty['USER_TYPE_SETTINGS']['KIT_VALUES_CNT'] = $arPropertySettings['VALUES_CNT'];
+			$arProperty['USER_TYPE_SETTINGS']['KIT_SORT'] = $arPropertySettings['SORT'];
+			$arProperty['USER_TYPE_SETTINGS']['KIT_SORT_ORDER'] = $arPropertySettings['SORT_ORDER'];
+			$arProperty['USER_TYPE_SETTINGS']['KIT_LOGIC'] = $arPropertySettings['LOGIC'];
 		}
 	}
 
 	$html = 
-	'<tr class="heading"><td colspan="2">'.Loc::getMessage('COLLECTED_MODULE_FILTER_PROPERTIES_SECTION').'</td></tr>'.
+	'<tr class="heading"><td colspan="2">'.Loc::getMessage('KIT_MODULE_FILTER_PROPERTIES_SECTION').'</td></tr>'.
 	'<tr>'. 
-		'<td width="40%" class="adm-detail-content-cell-l">'.Loc::getMessage('COLLECTED_MODULE_FILTER_PROPERTIES_HINT').':</td>'.
+		'<td width="40%" class="adm-detail-content-cell-l">'.Loc::getMessage('KIT_MODULE_FILTER_PROPERTIES_HINT').':</td>'.
 		'<td class="adm-detail-content-cell-r">'.
 			'<table>'.
 				'<tbody>'.
 					'<tr>'.
-						'<td>'.Loc::getMessage('COLLECTED_MODULE_FILTER_PROPERTIES_HINT_TYPE').':</td>'.
+						'<td>'.Loc::getMessage('KIT_MODULE_FILTER_PROPERTIES_HINT_TYPE').':</td>'.
 						'<td>'.
 							'<label>'.
-								'<input type="radio" name="PROPERTY_USER_TYPE_SETTINGS[COLLECTED_HINT_TYPE]" value="text"'.($arProperty['USER_TYPE_SETTINGS']['COLLECTED_HINT_TYPE'] == 'text' ? ' checked="checked"' : '') .'>'.
+								'<input type="radio" name="PROPERTY_USER_TYPE_SETTINGS[KIT_HINT_TYPE]" value="text"'.($arProperty['USER_TYPE_SETTINGS']['KIT_HINT_TYPE'] == 'text' ? ' checked="checked"' : '') .'>'.
 								'text'.
 							'</label> /'.
 							'<label>'.
-								'<input type="radio" name="PROPERTY_USER_TYPE_SETTINGS[COLLECTED_HINT_TYPE]" value="html"'.($arProperty['USER_TYPE_SETTINGS']['COLLECTED_HINT_TYPE'] == 'html' || $arProperty['USER_TYPE_SETTINGS']['COLLECTED_HINT_TYPE'] == '' ? ' checked="checked"' : '') .'>'.
+								'<input type="radio" name="PROPERTY_USER_TYPE_SETTINGS[KIT_HINT_TYPE]" value="html"'.($arProperty['USER_TYPE_SETTINGS']['KIT_HINT_TYPE'] == 'html' || $arProperty['USER_TYPE_SETTINGS']['KIT_HINT_TYPE'] == '' ? ' checked="checked"' : '') .'>'.
 								'html'.
 							'</label>'.
 						'</td>'.
 					'</tr>'.
 					'<tr>'.
 						'<td colspan="2" align="center">'.
-							'<textarea name="PROPERTY_USER_TYPE_SETTINGS[COLLECTED_HINT]" rows="10" cols="60" style="width:100%">'.$arProperty['USER_TYPE_SETTINGS']['COLLECTED_HINT'].'</textarea>'.
+							'<textarea name="PROPERTY_USER_TYPE_SETTINGS[KIT_HINT]" rows="10" cols="60" style="width:100%">'.$arProperty['USER_TYPE_SETTINGS']['KIT_HINT'].'</textarea>'.
 						'</td>'.
 					'</tr>'.
 				'</tbody>'.
@@ -138,20 +138,20 @@ if ($USER->IsAuthorized() && check_bitrix_sessid() && intval($_REQUEST['ID']) &&
 	else
 		$arFilterViews = array('CHECKBOX', 'RADIO', 'LINK', 'SELECT', 'LIST', /*'TEXT'*/);
 		
-	$filterView = $arProperty['USER_TYPE_SETTINGS']['COLLECTED_VIEW'];
+	$filterView = $arProperty['USER_TYPE_SETTINGS']['KIT_VIEW'];
 	
 	if(!in_array($filterView, $arFilterViews))
 		$filterView = $arFilterViews[0];
 	
 	$html .= 
-	'<tr id="collected_properties_view">'.
-		'<td width="40%" class="adm-detail-content-cell-l">'.Loc::getMessage('COLLECTED_MODULE_FILTER_PROPERTIES_VIEW').':</td>'.
+	'<tr id="kit_properties_view">'.
+		'<td width="40%" class="adm-detail-content-cell-l">'.Loc::getMessage('KIT_MODULE_FILTER_PROPERTIES_VIEW').':</td>'.
 		'<td class="adm-detail-content-cell-r">'.
-			'<select name="PROPERTY_USER_TYPE_SETTINGS[COLLECTED_VIEW]">';
+			'<select name="PROPERTY_USER_TYPE_SETTINGS[KIT_VIEW]">';
 			
 	foreach($arFilterViews as $view)
 	{
-		$html .= '<option value="'.$view.'"'.($filterView == $view ? ' selected="selected"' : '').'>'.Loc::getMessage('COLLECTED_MODULE_FILTER_PROPERTIES_VIEW_'.$view).'</option>';
+		$html .= '<option value="'.$view.'"'.($filterView == $view ? ' selected="selected"' : '').'>'.Loc::getMessage('KIT_MODULE_FILTER_PROPERTIES_VIEW_'.$view).'</option>';
 	}
 	
 	$html .= 
@@ -159,63 +159,63 @@ if ($USER->IsAuthorized() && check_bitrix_sessid() && intval($_REQUEST['ID']) &&
 		'</td>'.
 	'</tr>';
 	
-	$sliderStep = floatval($arProperty['USER_TYPE_SETTINGS']['COLLECTED_SLIDER_STEP']);
+	$sliderStep = floatval($arProperty['USER_TYPE_SETTINGS']['KIT_SLIDER_STEP']);
 
 	$html .= 
-	'<tr id="collected_properties_slider_step" '.($filterView !== 'SLIDER' ? ' style="display:none;"' : '').'>'. 
-		'<td width="40%" class="adm-detail-content-cell-l">'.Loc::getMessage('COLLECTED_MODULE_FILTER_PROPERTIES_SLIDER_STEP').':</td>'.
+	'<tr id="kit_properties_slider_step" '.($filterView !== 'SLIDER' ? ' style="display:none;"' : '').'>'.
+		'<td width="40%" class="adm-detail-content-cell-l">'.Loc::getMessage('KIT_MODULE_FILTER_PROPERTIES_SLIDER_STEP').':</td>'.
 		'<td class="adm-detail-content-cell-r">'.
-			'<select name="PROPERTY_USER_TYPE_SETTINGS[COLLECTED_SLIDER_STEP_TYPE]">'.
-				'<option value="AUTO"'.($sliderStep == 0 ? ' selected="selected"' : '').'>'.Loc::getMessage('COLLECTED_MODULE_FILTER_PROPERTIES_SLIDER_STEP_AUTO').'</option>'.
-				'<option value="SET"'.($sliderStep != 0 ? ' selected="selected"' : '').'>'.Loc::getMessage('COLLECTED_MODULE_FILTER_PROPERTIES_SLIDER_STEP_SET').'</option>'.
+			'<select name="PROPERTY_USER_TYPE_SETTINGS[KIT_SLIDER_STEP_TYPE]">'.
+				'<option value="AUTO"'.($sliderStep == 0 ? ' selected="selected"' : '').'>'.Loc::getMessage('KIT_MODULE_FILTER_PROPERTIES_SLIDER_STEP_AUTO').'</option>'.
+				'<option value="SET"'.($sliderStep != 0 ? ' selected="selected"' : '').'>'.Loc::getMessage('KIT_MODULE_FILTER_PROPERTIES_SLIDER_STEP_SET').'</option>'.
 			'</select>'.
 			'&nbsp;&nbsp;'.
-			'<input type="text" name="PROPERTY_USER_TYPE_SETTINGS[COLLECTED_SLIDER_STEP]" value="'.$sliderStep.'" '.($sliderStep<=0 ? ' style="display: none;"' : '').' />'.
+			'<input type="text" name="PROPERTY_USER_TYPE_SETTINGS[KIT_SLIDER_STEP]" value="'.$sliderStep.'" '.($sliderStep<=0 ? ' style="display: none;"' : '').' />'.
 		'</td>'.
 	'</tr>';
 	
-	$sliderUnits = trim($arProperty['USER_TYPE_SETTINGS']['COLLECTED_SLIDER_UNITS']);
+	$sliderUnits = trim($arProperty['USER_TYPE_SETTINGS']['KIT_SLIDER_UNITS']);
 		
 	$html .= 
-	'<tr id="collected_properties_slider_slider_units" '.($filterView !== 'SLIDER' ? ' style="display:none;"' : '').'>'. 
-		'<td width="40%" class="adm-detail-content-cell-l">'.Loc::getMessage('COLLECTED_MODULE_FILTER_PROPERTIES_SLIDER_UNITS').':</td>'.
+	'<tr id="kit_properties_slider_slider_units" '.($filterView !== 'SLIDER' ? ' style="display:none;"' : '').'>'.
+		'<td width="40%" class="adm-detail-content-cell-l">'.Loc::getMessage('KIT_MODULE_FILTER_PROPERTIES_SLIDER_UNITS').':</td>'.
 		'<td class="adm-detail-content-cell-r">'.
-			'<input type="text" name="PROPERTY_USER_TYPE_SETTINGS[COLLECTED_SLIDER_UNITS]" value="'.$sliderUnits.'" />'.
+			'<input type="text" name="PROPERTY_USER_TYPE_SETTINGS[KIT_SLIDER_UNITS]" value="'.$sliderUnits.'" />'.
 		'</td>'.
 	'</tr>';
 	
-	$listSize = intval($arProperty['USER_TYPE_SETTINGS']['COLLECTED_LIST_SIZE']);
+	$listSize = intval($arProperty['USER_TYPE_SETTINGS']['KIT_LIST_SIZE']);
 	
 	if($listSize <= 0)
 		$listSize = 8;
 		
 	$html .= 
-	'<tr id="collected_properties_slider_list_size" '.($filterView !== 'LIST' ? ' style="display:none;"' : '').'>'. 
-		'<td width="40%" class="adm-detail-content-cell-l">'.Loc::getMessage('COLLECTED_MODULE_FILTER_PROPERTIES_LIST_SIZE').':</td>'.
+	'<tr id="kit_properties_slider_list_size" '.($filterView !== 'LIST' ? ' style="display:none;"' : '').'>'.
+		'<td width="40%" class="adm-detail-content-cell-l">'.Loc::getMessage('KIT_MODULE_FILTER_PROPERTIES_LIST_SIZE').':</td>'.
 		'<td class="adm-detail-content-cell-r">'.
-			'<input type="text" name="PROPERTY_USER_TYPE_SETTINGS[COLLECTED_LIST_SIZE]" value="'.$listSize.'" />'.
+			'<input type="text" name="PROPERTY_USER_TYPE_SETTINGS[KIT_LIST_SIZE]" value="'.$listSize.'" />'.
 		'</td>'.
 	'</tr>';
 	
-	$listMulti = $arProperty['USER_TYPE_SETTINGS']['COLLECTED_LIST_MULTI'] == 'Y';
+	$listMulti = $arProperty['USER_TYPE_SETTINGS']['KIT_LIST_MULTI'] == 'Y';
 	
 	$html .= 
-	'<tr id="collected_properties_slider_list_multi" '.($filterView !== 'LIST' ? ' style="display:none;"' : '').'>'. 
-		'<td width="40%" class="adm-detail-content-cell-l">'.Loc::getMessage('COLLECTED_MODULE_FILTER_PROPERTIES_LIST_MULTI').':</td>'.
+	'<tr id="kit_properties_slider_list_multi" '.($filterView !== 'LIST' ? ' style="display:none;"' : '').'>'.
+		'<td width="40%" class="adm-detail-content-cell-l">'.Loc::getMessage('KIT_MODULE_FILTER_PROPERTIES_LIST_MULTI').':</td>'.
 		'<td class="adm-detail-content-cell-r">'.
-			'<input type="checkbox" name="PROPERTY_USER_TYPE_SETTINGS[COLLECTED_LIST_MULTI]" value="Y" '.($listMulti ? 'checked="checked"' : '').' />'.
+			'<input type="checkbox" name="PROPERTY_USER_TYPE_SETTINGS[KIT_LIST_MULTI]" value="Y" '.($listMulti ? 'checked="checked"' : '').' />'.
 		'</td>'.
 	'</tr>';
 	
-	$valuesCnt = intval($arProperty['USER_TYPE_SETTINGS']['COLLECTED_VALUES_CNT']);
+	$valuesCnt = intval($arProperty['USER_TYPE_SETTINGS']['KIT_VALUES_CNT']);
 	$html .= 
-	'<tr id="collected_properties_slider_values_cnt" '.(!in_array($filterView, array('CHECKBOX', 'RADIO', 'LINK')) ? ' style="display:none;"' : '').'>'. 
-		'<td width="40%" class="adm-detail-content-cell-l" valign="top">'.Loc::getMessage('COLLECTED_MODULE_FILTER_PROPERTIES_VALUES_CNT').':</td>'.
+	'<tr id="kit_properties_slider_values_cnt" '.(!in_array($filterView, array('CHECKBOX', 'RADIO', 'LINK')) ? ' style="display:none;"' : '').'>'.
+		'<td width="40%" class="adm-detail-content-cell-l" valign="top">'.Loc::getMessage('KIT_MODULE_FILTER_PROPERTIES_VALUES_CNT').':</td>'.
 		'<td class="adm-detail-content-cell-r">'.
-			'<input type="text" name="PROPERTY_USER_TYPE_SETTINGS[COLLECTED_VALUES_CNT]" value="'.$valuesCnt.'" />'.
+			'<input type="text" name="PROPERTY_USER_TYPE_SETTINGS[KIT_VALUES_CNT]" value="'.$valuesCnt.'" />'.
 			'<div class="adm-info-message-wrap">'.
 				'<div class="adm-info-message">'.
-					Loc::getMessage('COLLECTED_MODULE_FILTER_PROPERTIES_VALUES_CNT_TIP').
+					Loc::getMessage('KIT_MODULE_FILTER_PROPERTIES_VALUES_CNT_TIP').
 				'</div>'.
 			'</div>'.
 		'</td>'.
@@ -226,20 +226,20 @@ if ($USER->IsAuthorized() && check_bitrix_sessid() && intval($_REQUEST['ID']) &&
 	else
 		$arFilterSorts = array('NAME', 'CNT');
 	
-	$filterSort = $arProperty['USER_TYPE_SETTINGS']['COLLECTED_SORT'];
+	$filterSort = $arProperty['USER_TYPE_SETTINGS']['KIT_SORT'];
 	
 	if(!in_array($filterSort, $arFilterSorts))
 		$filterSort = $arFilterSorts[0];
 	
 	$html .= 
-	'<tr id="collected_properties_sort"'.($filterView == 'SLIDER' ? ' style="display:none;"' : '').'>'. 
-		'<td width="40%" class="adm-detail-content-cell-l">'.Loc::getMessage('COLLECTED_MODULE_FILTER_PROPERTIES_SORT').':</td>'.
+	'<tr id="kit_properties_sort"'.($filterView == 'SLIDER' ? ' style="display:none;"' : '').'>'.
+		'<td width="40%" class="adm-detail-content-cell-l">'.Loc::getMessage('KIT_MODULE_FILTER_PROPERTIES_SORT').':</td>'.
 		'<td class="adm-detail-content-cell-r">'.
-			'<select name="PROPERTY_USER_TYPE_SETTINGS[COLLECTED_SORT]">';
+			'<select name="PROPERTY_USER_TYPE_SETTINGS[KIT_SORT]">';
 			
 	foreach($arFilterSorts as $sort)
 	{
-		$html .= '<option value="'.$sort.'"'.($filterSort == $sort ? ' selected="selected"' : '').'>'.Loc::getMessage('COLLECTED_MODULE_FILTER_PROPERTIES_SORT_'.$sort).'</option>';
+		$html .= '<option value="'.$sort.'"'.($filterSort == $sort ? ' selected="selected"' : '').'>'.Loc::getMessage('KIT_MODULE_FILTER_PROPERTIES_SORT_'.$sort).'</option>';
 	}
 	
 	$html .= 
@@ -249,20 +249,20 @@ if ($USER->IsAuthorized() && check_bitrix_sessid() && intval($_REQUEST['ID']) &&
 	
 	$arFilterSortOrders = array('ASC', 'DESC');
 	
-	$filterOrder = $arProperty['USER_TYPE_SETTINGS']['COLLECTED_SORT_ORDER'];
+	$filterOrder = $arProperty['USER_TYPE_SETTINGS']['KIT_SORT_ORDER'];
 	
 	if(!in_array($filterOrder, $arFilterSortOrders))
 		$filterOrder = $arFilterSortOrders[0];
 	
 	$html .= 
-	'<tr id="collected_properties_sort_order"'.($filterView == 'SLIDER' ? ' style="display:none;"' : '').'>'. 
-		'<td width="40%" class="adm-detail-content-cell-l">'.Loc::getMessage('COLLECTED_MODULE_FILTER_PROPERTIES_SORT_ORDER').':</td>'.
+	'<tr id="kit_properties_sort_order"'.($filterView == 'SLIDER' ? ' style="display:none;"' : '').'>'.
+		'<td width="40%" class="adm-detail-content-cell-l">'.Loc::getMessage('KIT_MODULE_FILTER_PROPERTIES_SORT_ORDER').':</td>'.
 		'<td class="adm-detail-content-cell-r">'.
-			'<select name="PROPERTY_USER_TYPE_SETTINGS[COLLECTED_SORT_ORDER]">';
+			'<select name="PROPERTY_USER_TYPE_SETTINGS[KIT_SORT_ORDER]">';
 			
 	foreach($arFilterSortOrders as $order)
 	{
-		$html .= '<option value="'.$order.'"'.($filterOrder == $order ? ' selected="selected"' : '').'>'.Loc::getMessage('COLLECTED_MODULE_FILTER_PROPERTIES_SORT_ORDER_'.$order).'</option>';
+		$html .= '<option value="'.$order.'"'.($filterOrder == $order ? ' selected="selected"' : '').'>'.Loc::getMessage('KIT_MODULE_FILTER_PROPERTIES_SORT_ORDER_'.$order).'</option>';
 	}
 	
 	$html .= 
@@ -272,20 +272,20 @@ if ($USER->IsAuthorized() && check_bitrix_sessid() && intval($_REQUEST['ID']) &&
 	
 	$arFilterLogic = array('OR', 'AND');
 	
-	$filterLogic = $arProperty['USER_TYPE_SETTINGS']['COLLECTED_LOGIC'];
+	$filterLogic = $arProperty['USER_TYPE_SETTINGS']['KIT_LOGIC'];
 	
 	if(!in_array($filterLogic, $arFilterLogic))
 		$filterLogic = $arFilterLogic[0];
 
 	$html .= 
-	'<tr id="collected_properties_logic"'.($filterView == 'SLIDER' ||  $arProperty['MULTIPLE'] !== 'Y' ? ' style="display:none;"' : '').'>'. 
-		'<td width="40%" class="adm-detail-content-cell-l">'.Loc::getMessage('COLLECTED_MODULE_FILTER_PROPERTIES_LOGIC').':</td>'.
+	'<tr id="kit_properties_logic"'.($filterView == 'SLIDER' ||  $arProperty['MULTIPLE'] !== 'Y' ? ' style="display:none;"' : '').'>'.
+		'<td width="40%" class="adm-detail-content-cell-l">'.Loc::getMessage('KIT_MODULE_FILTER_PROPERTIES_LOGIC').':</td>'.
 		'<td class="adm-detail-content-cell-r">'.
-			'<select name="PROPERTY_USER_TYPE_SETTINGS[COLLECTED_LOGIC]">';
+			'<select name="PROPERTY_USER_TYPE_SETTINGS[KIT_LOGIC]">';
 			
 	foreach($arFilterLogic as $logic)
 	{
-		$html .= '<option value="'.$logic.'"'.($filterLogic == $logic ? ' selected="selected"' : '').'>'.Loc::getMessage('COLLECTED_MODULE_FILTER_PROPERTIES_LOGIC_'.$logic).'</option>';
+		$html .= '<option value="'.$logic.'"'.($filterLogic == $logic ? ' selected="selected"' : '').'>'.Loc::getMessage('KIT_MODULE_FILTER_PROPERTIES_LOGIC_'.$logic).'</option>';
 	}
 	
 	$html .= 
@@ -297,4 +297,4 @@ if ($USER->IsAuthorized() && check_bitrix_sessid() && intval($_REQUEST['ID']) &&
 	die();
 }
 
-echo CUtil::PhpToJSObject(array('ERROR' => Loc::getMessage('COLLECTED_MODULE_FILTER_EDIT_PROPERTY_AJAX_ERROR')));
+echo CUtil::PhpToJSObject(array('ERROR' => Loc::getMessage('KIT_MODULE_FILTER_EDIT_PROPERTY_AJAX_ERROR')));

@@ -5,7 +5,7 @@
 ```php
 <?
 IncludeComponent(
-	"collected:filter", 
+	"kit:filter", 
 	".default", 
 	array(
 		"IBLOCK_TYPE" => "catalog",

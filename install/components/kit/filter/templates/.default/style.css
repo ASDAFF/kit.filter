@@ -1,0 +1,483 @@
+/*
+ * Copyright (c) 6/3/2020 Created By/Edited By ASDAFF asdaff.asad@yandex.ru
+ */
+
+#kit-filter{
+	border: 2px solid #ffea94;
+	margin-top: 1em;
+	margin-bottom: 2em;
+	max-width:290px;
+	padding: 10px 10px 20px 10px;
+	position: relative;
+	background: white;
+}
+
+#kit-filter ul{
+	list-style: none !important;
+	margin:0;
+	padding:0 0 20px 0;
+}
+
+#kit-filter .lvl1 {
+	position: relative;
+	list-style: none !important;
+	margin:0;
+	padding:0;
+	margin-top: 1em;
+}
+
+#kit-filter .lvl1:before, #kit-filter li:before {
+	content: none !important;
+}
+
+#kit-filter .kit-filter-property-body{
+	padding: 10px 0 0 15px;
+}
+
+#kit-filter .lvl2{
+	margin:0;
+	padding: 2px 0 0 0;
+}
+
+#kit-filter .kit-filter-property-head {
+	zoom: 1;
+	padding-left: 19px;
+	margin-bottom:5px;
+	position: relative;
+}
+
+#kit-filter .kit-filter-property-i {
+	background: url("images/list.gif") no-repeat scroll center -9px rgba(0, 0, 0, 0);
+	display: block;
+	position: absolute;
+	font-size: 1px;
+	height: 9px;
+	left: 1px;
+	cursor: pointer;
+	top: 5px;
+	width: 9px;
+	zoom: 1;
+}
+
+#kit-filter .kit-closed .kit-filter-property-i {
+	background: url("images/list.gif") no-repeat scroll center top rgba(0, 0, 0, 0);
+}
+
+#kit-filter .kit-filter-property-name {
+	border-bottom: 1px dotted #000;
+	cursor: pointer;
+	position: relative;
+	font-weight:bold;
+}
+
+#kit-filter .kit-num .kit-input{
+	width: 4em;
+	margin:0;
+}
+
+#kit-filter .kit-num .kit-range{
+	padding:10px 10px 10px 0;
+}
+
+#kit-filter .kit-num .kit-range input{
+	display:none;
+}
+
+#kit-filter div.kit-combo,
+#kit-filter div.kit-radio
+{
+	padding: 5px 0 0 15px;
+	margin: 0;
+}
+
+#kit-filter div.kit-link
+{
+	padding: 0 0 0 15px;
+	margin: 0;
+}
+
+#kit-filter div.kit-select,
+#kit-filter div.kit-list
+{
+	padding: 0;
+	margin: 0;
+}
+
+#kit-filter .kit-select select,
+#kit-filter .kit-list select
+{
+	padding: 5px;
+	width:100%;
+}
+
+#kit-filter .kit-combo .lvl2 input,
+#kit-filter .kit-radio .lvl2 input{
+	margin:0;
+}
+
+#kit-filter .kit-combo .lvl2 label,
+#kit-filter .kit-radio .lvl2 label{
+	padding-left: 7px;
+}
+
+#kit-filter .kit-disabled label,
+#kit-filter .kit-disabled a,
+#kit-filter option.kit-disabled{
+	color: #6f7980;
+}
+
+#kit-filter .kit-link  .lvl2{
+	padding-left: 8px;
+	position: relative;
+	left: -8px;
+}
+
+#kit-filter .kit-link .kit-checked{
+	padding-left: 0;
+}
+
+#kit-filter .kit-link  .lvl2 a{
+	padding: 2px 0 1px 0;
+	display: inline-block;
+}
+
+#kit-filter .kit-link .kit-checked a{
+	border: 1px solid #e7e7e7;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	color: #3f454b;
+	padding: 1px 22px 1px 8px;
+	position: relative;
+	text-decoration:none;
+}
+
+#kit-filter .kit-link .kit-checked a:hover{
+	border-color: #fbdada;
+	text-decoration:none;
+}
+
+#kit-filter .kit-link  .lvl2 a span.kit-remove-link{
+	background: #ffffff url("images/remove_link.png") no-repeat 0 0;
+	display: none;
+	height: 8px;
+	margin-left: 8px;
+	position: absolute;
+	right: 8px;
+	top: 6px;
+	width: 8px;
+}
+
+#kit-filter .kit-link .kit-checked a span.kit-remove-link{
+	display: inline-block;
+}
+
+#kit-filter .kit-link .kit-checked a:hover span.kit-remove-link{
+	background-position: 0 100%;
+}
+
+#kit-filter .kit-link .kit-disabled a{
+	color: #6f7980 !important;
+	border:none;
+	text-decoration:line-through;
+}
+
+#kit-filter .kit-disabled a{
+	border:none;
+	text-decoration:line-through;
+}
+
+#kit-filter .lvl2 .kit-cnt{
+	color: #6f7980;
+	font-size: .85em;
+}
+
+#kit-filter .kit-disabled .kit-cnt, .kit-filter .kit-checked .kit-cnt{
+	display:none;
+}
+
+#kit-filter .kit-checked a{
+	border:none;
+	color:#000;
+}
+
+#kit-filter .kit-filter-property-body a.kit-values-other-show,
+#kit-filter .kit-filter-property-body a.kit-values-other-hide{
+	font-size: .85em;
+	display:inline-block;
+	margin-top:5px;
+	border:0;
+}
+
+#kit-filter .kit-filter-property-hint{
+	cursor: pointer;
+	position: relative;
+	top: 2px;
+	width: 12px;
+	height: 12px;
+	margin-left:5px;
+	display: inline-block;
+	background: rgba(0, 0, 0, 0) url(images/hint.gif) no-repeat right center;
+}
+
+#kit-filter .kit-filter-property-hint-text{
+	display:none;
+}
+
+.kit-filter-hint{
+	padding:5px 10px 5px 5px;
+	max-width: 500px;
+}
+
+#kit-filter .modef {
+	background: transparent url('images/modef.gif') no-repeat right center;
+	top: -4px;
+	position: absolute;
+	padding-right:5px;
+	z-index:1000;
+}
+
+#kit-filter .modef-right {
+	background: transparent url('images/modef-right.gif') no-repeat left center;
+	padding-left:5px;
+}
+
+#kit-filter .modef .modef-wrap {
+	background-color:#fff;
+	border: 1px solid #ffea94;
+	border-right:none;
+	color: #3F3F3F;
+	padding: 5px 25px 5px 10px;
+	white-space: nowrap;
+}
+
+#kit-filter .modef-right .modef-wrap {
+	border: 1px solid #ffea94;
+	border-left:none;
+}
+
+#kit-filter .kit-loading {
+	position:absolute;
+	z-index:100;
+	left:0;
+	top:0;
+	background:transparent url(images/loading.png) repeat center;
+	display:none;
+}
+
+a.kit-del-filter{
+	display:inline-block;
+	margin-left:10px;
+}
+
+#kit-filter .irs {
+    position: relative; display: block;
+}
+    #kit-filter .irs-line {
+        position: relative; display: block;
+        overflow: hidden;
+    }
+        #kit-filter .irs-line-left, #kit-filter .irs-line-mid, #kit-filter .irs-line-right {
+            position: absolute; display: block;
+            top: 0;
+        }
+        #kit-filter .irs-line-left {
+            left: 0; width: 0%;
+        }
+        #kit-filter .irs-line-mid {
+            left: 10%;
+        }
+        #kit-filter .irs-line-right {
+            right: 0; width: 0%;
+        }
+
+    #kit-filter .irs-diapason, #kit-filter .irs-diapason-left, #kit-filter .irs-diapason-right {
+        position: absolute; display: block;
+        left: 0; width: 100%;
+    }
+    #kit-filter .irs-slider {
+        position: absolute; display: block;
+        cursor: default;
+        z-index: 1;
+    }
+        #kit-filter .irs-slider.single {
+            left: 10px;
+        }
+            #kit-filter .irs-slider.single:before {
+                position: absolute; display: block; content: "";
+                top: -50%; left: -100%;
+                width: 300%; height: 200%;
+                background: rgba(0,0,0,0.0);
+            }
+        #kit-filter .irs-slider.from {
+            left: 100px;
+        }
+            #kit-filter .irs-slider.from:before {
+                position: absolute; display: block; content: "";
+                top: -50%; left: -200%;
+                width: 300%; height: 200%;
+                background: rgba(0,0,0,0.0);
+            }
+        #kit-filter .irs-slider.to {
+            left: 300px;
+        }
+            #kit-filter .irs-slider.to:before {
+                position: absolute; display: block; content: "";
+                top: -50%; left: 0;
+                width: 300%; height: 200%;
+                background: rgba(0,0,0,0.0);
+            }
+        #kit-filter .irs-slider.last {
+            z-index: 2;
+        }
+
+    #kit-filter .irs-min {
+        position: absolute; display: block;
+        left: 0;
+        cursor: default;
+    }
+    #kit-filter .irs-max {
+        position: absolute; display: block;
+        right: 0;
+        cursor: default;
+    }
+
+    #kit-filter .irs-from, #kit-filter .irs-to, #kit-filter .irs-single {
+        position: absolute; display: block;
+        bottom: 0; left: 0;
+        cursor: default;
+        white-space: nowrap;
+		margin-bottom:-17px;
+    }
+	
+	#kit-filter .irs-from {
+		margin-left:-7px;
+    }
+	
+	#kit-filter .irs-to {
+		margin-left:10px;
+    }
+
+
+#kit-filter .irs-grid {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 20px;
+}
+#kit-filter .irs-with-grid #kit-filter .irs-grid {
+    display: block;
+}
+    #kit-filter .irs-grid-pol {
+        position: absolute;
+        bottom: 0; left: 0;
+        width: 1px; height: 8px;
+        background: #000;
+    }
+    #kit-filter .irs-grid-pol.small {
+        height: 4px;
+    }
+    #kit-filter .irs-grid-text {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100px;
+        white-space: nowrap;
+        text-align: center;
+        font-size: 9px; line-height: 9px;
+        color: #000;
+    }
+	
+#kit-filter .irs-line-mid,
+#kit-filter .irs-line,
+#kit-filter .irs-diapason-left,
+#kit-filter .irs-diapason-right,
+#kit-filter .irs-slider {
+    background: url(images/slider.png) repeat-x;
+}
+
+#kit-filter .irs {
+    height: 40px;
+}
+#kit-filter .irs-with-grid {
+    margin-top: 10px;
+}
+#kit-filter .irs-line {
+    height: 8px; top: 25px;
+	 background-position: 0 0;
+}
+    #kit-filter .irs-line-left {
+        height: 8px;
+        background-position: 0 -30px;
+    }
+    #kit-filter .irs-line-mid {
+        height: 6px;
+        background-position: left bottom;
+    }
+    #kit-filter .irs-line-right {
+        height: 8px;
+        background-position: 100% -30px;
+    }
+
+#kit-filter .irs-diapason, #kit-filter .irs-diapason-left, #kit-filter .irs-diapason-right {
+    height: 8px; top: 25px;
+    background-position: 0 -60px;
+}
+
+#kit-filter .irs-diapason{
+	background:none;
+}
+
+#kit-filter .irs-slider {
+    width: 22px; height: 22px;
+    top: 17px;
+    background-position: 0 -90px;
+}
+
+#kit-filter .irs-min, #kit-filter .irs-max {
+    color: #999;
+    font-size: 10px; line-height: 1.333;
+    text-shadow: none;
+    top: 0; padding: 1px 3px;
+    background: rgba(0,0,0,0.1);
+    border-radius: 3px;
+}
+.lt-ie9 #kit-filter .irs-min, .lt-ie9 #kit-filter .irs-max {
+    background: #ccc;
+}
+
+#kit-filter .irs-from, #kit-filter .irs-to, #kit-filter .irs-single {
+    color: #fff;
+    font-size: 10px; line-height: 1.333;
+    text-shadow: none;
+    padding: 1px 5px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 3px;
+	display:none !important;
+}
+.lt-ie9 #kit-filter .irs-from, .lt-ie9 #kit-filter .irs-to, .lt-ie9 #kit-filter .irs-single {
+    background: #999;
+}
+
+#kit-filter .irs-grid-pol {
+    background: #99a4ac;
+}
+#kit-filter .irs-grid-text {
+    color: #99a4ac;
+}
+
+#kit-filter .irs-slider.from {
+	background-position:-4px -75px;
+	width: 13px;
+	height: 28px;
+	margin-left: -6px;
+}
+
+#kit-filter .irs-slider.to {
+	background-position:-4px -75px;
+	width: 13px;
+	height: 28px;
+	margin-left: -7px;
+}
+
+#irs-active-slider, #kit-filter .irs-slider:hover {
+    background-position: -4px -105px;
+}

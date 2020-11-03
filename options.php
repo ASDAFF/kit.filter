@@ -6,23 +6,23 @@
  */
 
 IncludeModuleLangFile(__FILE__);
-$APPLICATION->SetTitle(GetMessage("COLLECTED_MODULE_FILTER_OPTIONS_TAB_1"));
+$APPLICATION->SetTitle(GetMessage("KIT_MODULE_FILTER_OPTIONS_TAB_1"));
 if ($USER->IsAdmin()):
 	
 	if ($_POST['Update'] && check_bitrix_sessid()) {
 		$paths = $_POST['sef_paths'];
-		COption::SetOptionString('collected.filter', "sef_paths", $paths);
+		COption::SetOptionString('kit.filter', "sef_paths", $paths);
 		
 		$iblocks = $_POST['iblocks'];
 		if(is_array($iblocks))
-			COption::SetOptionString('collected.filter', "iblocks", serialize($iblocks));
+			COption::SetOptionString('kit.filter', "iblocks", serialize($iblocks));
 		else
-			COption::SetOptionString('collected.filter', "iblocks", '');
+			COption::SetOptionString('kit.filter', "iblocks", '');
 	}
 	
-	$paths = COption::GetOptionString('collected.filter', "sef_paths");
+	$paths = COption::GetOptionString('kit.filter', "sef_paths");
 	
-	$iblocks = COption::GetOptionString('collected.filter', "iblocks");
+	$iblocks = COption::GetOptionString('kit.filter', "iblocks");
 	
 	if(strlen($iblocks))
 		$iblocks = unserialize($iblocks);
@@ -37,20 +37,20 @@ if ($USER->IsAdmin()):
 		$iblocks = $_POST['iblocks'];
 		
 	$aTabs = array();
-	$aTabs[] = array("DIV" => "edit1", "TAB" => GetMessage("COLLECTED_MODULE_FILTER_OPTIONS_TAB_1"), "ICON" => "settings", "TITLE" => GetMessage("COLLECTED_MODULE_FILTER_OPTIONS_TAB_1_TITLE"));
+	$aTabs[] = array("DIV" => "edit1", "TAB" => GetMessage("KIT_MODULE_FILTER_OPTIONS_TAB_1"), "ICON" => "settings", "TITLE" => GetMessage("KIT_MODULE_FILTER_OPTIONS_TAB_1_TITLE"));
 	
 	$tabControl = new CAdminTabControl("tabControl", $aTabs);
 	$tabControl->Begin();?>
-	<form name="collected_filter_options" method="POST" action="<?echo $APPLICATION->GetCurPage()?>?mid=<?=htmlspecialcharsbx($mid)?>&amp;lang=<?echo LANG?>&amp;mid_menu=1">
+	<form name="kit_filter_options" method="POST" action="<?echo $APPLICATION->GetCurPage()?>?mid=<?=htmlspecialcharsbx($mid)?>&amp;lang=<?echo LANG?>&amp;mid_menu=1">
 		<?=bitrix_sessid_post();?>
 		<?$tabControl->BeginNextTab();?>
 			<tr>
-				<td width="40%" class="adm-detail-valign-top adm-detail-content-cell-l"><?=GetMessage('COLLECTED_MODULE_FILTER_OPTIONS_PATHS');?>:</td>
+				<td width="40%" class="adm-detail-valign-top adm-detail-content-cell-l"><?=GetMessage('KIT_MODULE_FILTER_OPTIONS_PATHS');?>:</td>
 				<td width="60%" class="adm-detail-content-cell-r">
 					<textarea rows="5" name="sef_paths" style="width:100%"><?echo htmlspecialcharsbx($paths)?></textarea>
 					<?
 					echo BeginNote();
-					echo GetMessage("COLLECTED_MODULE_FILTER_OPTIONS_PATHS_TIPS");
+					echo GetMessage("KIT_MODULE_FILTER_OPTIONS_PATHS_TIPS");
 					echo EndNote();
 					?>
 				</td>
@@ -69,7 +69,7 @@ if ($USER->IsAdmin()):
 			?>
 			<?if(count($arIBlocks)):?>
 			<tr>
-				<td width="40%" class="adm-detail-valign-top adm-detail-content-cell-l"><?=GetMessage('COLLECTED_MODULE_FILTER_OPTIONS_IBLOCKS');?>:</td>
+				<td width="40%" class="adm-detail-valign-top adm-detail-content-cell-l"><?=GetMessage('KIT_MODULE_FILTER_OPTIONS_IBLOCKS');?>:</td>
 				<td width="60%" class="adm-detail-content-cell-r">
 					<select name="iblocks[]" multiple="multiple" size="8">
 					<?foreach($arIBlocks as $id => $name):?>

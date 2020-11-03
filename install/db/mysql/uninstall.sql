@@ -1,1 +1,1 @@
-DROP TABLE IF EXISTS b_collected_filter_prop_settings;
+DROP TABLE IF EXISTS b_kit_filter_prop_settings;

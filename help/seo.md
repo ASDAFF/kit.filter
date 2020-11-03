@@ -9,7 +9,7 @@ Description - $APPLICATION->ShowMeta("description", false, true);
 
 Для того, чтобы задавать значения мета-тегов для страниц фильтра, вам нужно в настройках модуля фильтра выбрать инфоблок(и), для которых вы будете создавать правила.
 
-Для этого в административном разделе переходим в Рабочий стол/Настройки/Настройки продукта/Настройки модулей/Collected: Умный фильтр
+Для этого в административном разделе переходим в Рабочий стол/Настройки/Настройки продукта/Настройки модулей/Kit: Умный фильтр
 
 ![](img_md/ac9134c53a3d622944a7065a572569bd.png)
 
@@ -41,8 +41,8 @@ Description - $APPLICATION->ShowMeta("description", false, true);
 
 ```php
 <?
-if(CModule::IncludeModule('collected.filter')){
-	echo Collected\Filter\Seo::ShowText("");
+if(CModule::IncludeModule('kit.filter')){
+	echo Kit\Filter\Seo::ShowText("");
 }
 ?>
 ```

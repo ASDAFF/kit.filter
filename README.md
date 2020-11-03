@@ -1,4 +1,4 @@
-# collected.filter
+# kit.filter
 
 <p>Особенности данного модуля:</p>
  

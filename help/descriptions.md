@@ -9,7 +9,7 @@
 **Пример вызова**
 ```php
 <?$APPLICATION->IncludeComponent(
-      "collected:filter", 
+      "kit:filter", 
       "horizontal", 
       array(
           "IBLOCK_TYPE" => "catalog",
@@ -76,7 +76,7 @@
 
 ```php
 <?$APPLICATION->IncludeComponent(
-      "collected:filter", 
+      "kit:filter", 
       "", //шаблон - .default (можно указать horizontal, bitronic_vertical или bitronic_horizontal)
       array(
           "IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],

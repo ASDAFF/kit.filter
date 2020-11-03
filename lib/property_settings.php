@@ -4,7 +4,7 @@
  * Copyright (c) 6/3/2020 Created By/Edited By ASDAFF asdaff.asad@yandex.ru
  */
 
-namespace Collected\Filter;
+namespace Kit\Filter;
 
 use Bitrix\Main\Entity;
 use Bitrix\Main\Localization\Loc;
@@ -20,7 +20,7 @@ class PropertySettingsTable extends Entity\DataManager
 	
 	public static function getTableName()
 	{
-		return 'b_collected_filter_prop_settings';
+		return 'b_kit_filter_prop_settings';
 	}
 
 	public static function getMap()

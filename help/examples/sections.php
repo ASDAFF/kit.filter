@@ -31,7 +31,7 @@ if ($verticalGrid)
         ?>
         <?
         $APPLICATION->IncludeComponent(
-            "collected:filter",
+            "kit:filter",
             "",
             array(
                 "IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
